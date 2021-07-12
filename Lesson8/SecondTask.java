@@ -46,26 +46,21 @@ public class SecondTask {
             int x = 0, y = 0;
             final int cubeSize = n / 4 - 1;
 
-            try {
-                while (y != n) {
-                    numberIncrease++;
-                    numberDecrease--;
-                    final boolean b = (x >= 0 && x <= cubeSize) || (x >= n - cubeSize - 1 && x <= n - 1);
-                    if ((b && (y >= 0 && y <= cubeSize)) ||
-                            (b && (y >= n - cubeSize - 1 && y <= n - 1))
-                            || ((x > cubeSize && x < n - cubeSize - 1) && (y > cubeSize && y < n - cubeSize - 1)))
-                        resultArray[y][x] = numberIncrease;
-                    else
-                        resultArray[y][x] = numberDecrease;
-
-                    x++;
-                    if (x == n) {
-                        y++;
-                        x = 0;
-                    }
+            while (y != n) {
+                numberIncrease++;
+                numberDecrease--;
+                final boolean b = (x >= 0 && x <= cubeSize) || (x >= n - cubeSize - 1 && x <= n - 1);
+                if ((b && (y >= 0 && y <= cubeSize)) ||
+                        (b && (y >= n - cubeSize - 1 && y <= n - 1))
+                        || ((x > cubeSize && x < n - cubeSize - 1) && (y > cubeSize && y < n - cubeSize - 1)))
+                    resultArray[y][x] = numberIncrease;
+                else
+                    resultArray[y][x] = numberDecrease;
+                x++;
+                if (x == n) {
+                    y++;
+                    x = 0;
                 }
-            } catch (ArrayIndexOutOfBoundsException e) {
-                int a = 0;
             }
         }
 

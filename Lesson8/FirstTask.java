@@ -17,7 +17,7 @@ public class FirstTask {
                     break;
                 } else {
                     position += 3;
-                    if (position > 15)
+                    if (position >= 15)
                         position -= 15;
                     visited = true;
                 }
